@@ -3,11 +3,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const postgresRouter = require('./routes/postgres.route.js');
-const mongoRouter = require('./routes/mongo.route.js');
+const postgresRouter = require('./routes').postgresRoute;
+const mongoRouter = require('./routes').mongoRoute;
 
-const logErrors = require('./helpers/logErrors');
-const errorHandler = require('./helpers/errorHandler');
+const logErrors = require('./utils/logErrors');
+const errorHandler = require('./utils/errorHandler');
 
 const app = express();
 const config = require('./config');
@@ -17,7 +17,7 @@ app.set('root', __dirname);
 
 app.disable('x-powered-by');
 
-require('./pg').init(app);
+// require('./pg').init(app);
 // require('./mongo').init(app);
 
 app.use(logger('dev'));
@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/postgres', postgresRouter);
-app.use('/mongo', mongoRouter);
+// app.use('/mongo', mongoRouter);
 
 // Use error handler
 app.use(logErrors);

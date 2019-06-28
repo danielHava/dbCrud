@@ -4,7 +4,11 @@ module.exports = {
     user: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASS,
     database: process.env.POSTGRES_DB,
-    port: process.env.POSTGRES_PORT || 5432
+    port: process.env.POSTGRES_PORT || 5432,
+    pool: {
+      min: 0,
+      max: 20
+    }
   },
   mongo: {
     host: process.env.MONGO_HOST,
