@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "a312d664-2d58-4207-9cbb-b7f67f4742b9",
+		"name": "Remote Lerning",
+		"description": "Example REST Api made with express.js, sequelize, postgresql and mongoDb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "Book Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/book/test",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"book",
+								"test"
+							]
+						},
+						"description": "tests book endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Book List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/book/list",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"book",
+								"list"
+							]
+						},
+						"description": "fetchs a list of books"
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/book/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"book",
+								""
+							]
+						},
+						"description": "inserts a new book"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/book/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"book",
+								""
+							]
+						},
+						"description": "updates an existing book"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/book/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"book",
+								""
+							]
+						},
+						"description": "deletes an  existing book"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "people",
+			"item": [
+				{
+					"name": "Person Test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/person/test",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"person",
+								"test"
+							]
+						},
+						"description": "tests book endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Person List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/person/list",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"person",
+								"list"
+							]
+						},
+						"description": "fetchs a list of people"
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Person",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/person/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						},
+						"description": "inserts a new book"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/person/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						},
+						"description": "updates an existing book"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url_postgres}}/person/",
+							"host": [
+								"{{base_url_postgres}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						},
+						"description": "deletes an  existing book"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0f84adcd-cebe-42b7-8564-2aaf6bc0ba6b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c6241810-ee74-48a0-bc51-1e89eab4bb44",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0d4014b7-8ac4-4fce-a10f-e603d36b9546",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ed5cd110-772b-4b4d-8570-2c5f5417a5b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6df70eef-3ea2-4860-8de1-3e36a473284d",
+			"key": "base_url_postgres",
+			"value": "localhost:3000/postgres",
+			"type": "string"
+		},
+		{
+			"id": "c8962a24-f24f-4d42-a260-dbbab5578851",
+			"key": "base_url_mongo",
+			"value": "localhost:3000/mongo",
+			"type": "string"
+		}
+	]
+}
