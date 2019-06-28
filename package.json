@@ -3,17 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server",
+    "start": "node server",
+    "dev": "nodemon server",
+    "postgres:bootstrap": "npm run postgres:create-volume && npm run postgres:up",
     "postgres:create-volume": "docker volume create crud_postgres",
     "postgres:up": "docker run -d --name dbpg -v crud_postgres:/var/lib/postgresql/data -e POSTGRES_PASSWORD=superpass -e POSTGRES_USER=superuser -p 5432:5432 postgres",
     "postgres:stop": "docker stop dbpg",
     "postgres:start": "docker start dbpg",
+    "mongo:bootstrap": "npm run mongo:create-volume && npm run mongo:up",
     "mongo:create-volume": "docker volume create crud_mongo",
     "mongo:up": "docker run -d --name dbmongo -v crud_mongo:/etc/mongo -e MONGO_INITDB_ROOT_USERNAME=superuser -e MONGO_INITDB_ROOT_PASSWORD=superpass -e MONGO_INITDB_DATABASE=superdb -p 27017:27017 mongo",
     "mongo:stop": "docker stop dbmongo",
     "mongo:start": "docker start dbmongo",
     "remove:dbs": "docker rm -f dbpg && docker rm -f dbmongo",
-    "start:dbs": "npm run postgres:start && npm run mongo:start"
+    "start:dbs": "npm run postgres:start && npm run mongo:start",
+    "sequelize-skeleton": "npx sequelize init:models && npx sequelize init:migrations && npx sequelize init:seeders && npx sequelize init:config",
+    "run-migrations": "npx sequelize db:migrate",
+    "undo-migrations": "npx sequelize db:migrate:undo:all",
+    "run-seeders": "npx sequelize db:seed:all",
+    "undo-seeders": "npx sequelize db:seed:undo:all"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -23,9 +31,13 @@
     "knex": "^0.17.3",
     "morgan": "~1.9.1",
     "objection": "^1.6.9",
-    "pg": "^7.11.0"
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.8.11",
+    "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
+    "faker": "^4.1.0",
     "nodemon": "^1.19.1"
   }
 }

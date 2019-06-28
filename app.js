@@ -17,7 +17,7 @@ app.set('root', __dirname);
 
 app.disable('x-powered-by');
 
-// require('./pg').init(app);
+require('./pg').init(app);
 // require('./mongo').init(app);
 
 app.use(logger('dev'));
