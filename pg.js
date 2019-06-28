@@ -22,10 +22,10 @@ function initPostgres(app) {
     },
     migrations: {
       tableName: 'migrations',
-      directory: path.resolve(path.dirname(__filename), '../db/migrations')
+      directory: path.resolve(path.dirname(__filename), './db/migrations')
     },
     seeds: {
-      directory: path.resolve(path.dirname(__filename), '../db/seeds')
+      directory: path.resolve(path.dirname(__filename), './db/seeds')
     }
   });
 
@@ -54,7 +54,7 @@ function getDB() {
   return postgresDatabase;
 }
 
-module.exports.init = {
+module.exports = {
     init: initPostgres,
     getDB: getDB
 }
